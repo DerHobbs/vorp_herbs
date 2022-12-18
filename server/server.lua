@@ -15,10 +15,10 @@ AddEventHandler('vorp_picking:addItem', function()
 			VorpInv.addItem(source, FinalLoot, Config.randomgive)
 			if Config.randomgive > 1 then
 				LootsToGive = {}
-				VorpCore.NotifyLeft(source, "Beeren", "Du hast " ..v.name.."n gefunden", "INVENTORY_ITEMS", "consumable_herb_black_berry", 3000, "COLOR_PURPLE")
+				VorpCore.NotifyLeft(source, Config.Language.notifytitel, "You have " ..v.name.. " found", "INVENTORY_ITEMS", "consumable_herb_black_berry", 3000, "COLOR_PURPLE")
 			else
 				LootsToGive = {}
-				VorpCore.NotifyLeft(source, "Beeren", "Du hast eine " ..v.name.. " gefunden", "INVENTORY_ITEMS", "consumable_herb_black_berry", 3000, "COLOR_PURPLE")
+				VorpCore.NotifyLeft(source, Config.Language.notifytitel, "You have a " ..v.name.. " found", "INVENTORY_ITEMS", "consumable_herb_black_berry", 3000, "COLOR_PURPLE")
 			end
 		end
 	end

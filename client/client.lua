@@ -11,7 +11,7 @@ local Bushgroup = GetRandomIntInRange(0, 0xffffff)
 
 function createPromptGroup()
     Citizen.CreateThread(function()
-        local str = 'Absuchen'
+        local str = Config.Language.prompt
         CollectPrompt = Citizen.InvokeNative(0x04F97DE45A519419)
         PromptSetControlAction(CollectPrompt, Config.SearchKey)
         str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -143,7 +143,7 @@ function checkPrompts(player_ped_id)
     player_ped_id = player_ped_id or PlayerPedId()
 
     if active == false then
-        local BushgroupName = CreateVarString(10, 'LITERAL_STRING', "Busch")
+        local BushgroupName = CreateVarString(10, 'LITERAL_STRING', Config.Language.promptsub)
         PromptSetActiveGroupThisFrame(Bushgroup, BushgroupName)
     end
 
@@ -223,7 +223,7 @@ function goCollect()
         active = false
         releasePlayer(player_ped_id, 200)
     else
-        TriggerEvent('vorp:NotifyLeft', "Beeren", "Du hast keine Beeren gefunden!", "BLIPS", "blip_destroy", 2000, "COLOR_RED")
+        TriggerEvent('vorp:NotifyLeft', Config.Language.notifytitel, Config.Language.notfound, "BLIPS", "blip_destroy", 2000, "COLOR_RED")
         active = false
         releasePlayer(player_ped_id, 200)
     end

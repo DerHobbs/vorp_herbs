@@ -17,9 +17,9 @@ Config.randomgive = math.random(1,3)
 Config.Language = {
 	prompt = "Search",
 	promptsub = "Bush",
-
+	
 	notifytitel = "Berries",
-
+	
 	notfound = "You didn't find any berries!"
 
 }
